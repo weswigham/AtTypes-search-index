@@ -1,0 +1,18 @@
+{
+  "author": {
+    "name": "Wesley Wigham",
+    "email": "https://github.com/weswigham"
+  },
+  "dependencies": {},
+  "description": "TypeScript definitions for search-index",
+  "devDependencies": {},
+  "license": "MIT",
+  "main": "",
+  "name": "@types/search-index",
+  "repository": {
+    "type": "git",
+    "url": "https://www.github.com/weswigham/AtTypes-search-index.git"
+  },
+  "typeScriptVersion": "2.1",
+  "version": "1.0.0"
+}
