@@ -19,7 +19,7 @@ declare namespace SearchIndex {
     stopwords?: string[];
   }
   export type SearchTerm = string | { gte?: string, lte?: string, limit?: number };
-  export type ANDQuery<T> = { AND: {[K in keyof T]?: SearchTerm[]} & { '*'?: SearchTerm[] } };
+  export type ANDQuery<T> = { AND: {[K in keyof T]?: SearchTerm[]} & { '*'?: SearchTerm[] } } & { BOOST?: number };
   export type NOTQuery<T> = { NOT: {[K in keyof T]?: SearchTerm[]} & { '*'?: SearchTerm[] } };
   export type QueryOptions<T> = (ANDQuery<T> | NOTQuery<T> | (ANDQuery<T> & NOTQuery<T>)) | ((ANDQuery<T> | NOTQuery<T> | (ANDQuery<T> & NOTQuery<T>))[]);
   export interface BucketsOptions<T> {
