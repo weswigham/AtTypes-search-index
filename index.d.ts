@@ -77,7 +77,7 @@ declare namespace SearchIndex {
     get(ids: string[]): NodeJS.EventEmitter;
     match(opts: MatchOptions<T>): NodeJS.EventEmitter;
     search(opts: SearchOptions<T>): NodeJS.EventEmitter;
-    totalHits(opts?: SearchOptions<T>, cb: (err: any, count: number) => void): void;
+    totalHits(opts?: SearchOptions<T>, cb?: (err: any, count: number) => void): void;
     add(): NodeJS.WritableStream;
     concurrentAdd(opts: IndexingOptions<T>, items: T[], cb: (err: any) => void): void;
     defaultPipeline(opts?: IndexingOptions<T>): NodeJS.WritableStream;
@@ -88,6 +88,6 @@ declare namespace SearchIndex {
     dbWriteStream(opts?: {merge?: boolean}): NodeJS.WritableStream;
   }
 }
-declare function SearchIndex<T>(opts: SearchIndex.Options, cb: SearchIndex.Callback<T>);
-declare function SearchIndex(opts: SearchIndex.Options, cb: SearchIndex.Callback<any>);
+declare function SearchIndex<T>(opts: SearchIndex.Options, cb: SearchIndex.Callback<T>): void;
+declare function SearchIndex(opts: SearchIndex.Options, cb: SearchIndex.Callback<any>): void;
 export = SearchIndex;
